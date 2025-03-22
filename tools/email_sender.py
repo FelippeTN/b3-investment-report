@@ -1,16 +1,17 @@
 from dotenv import load_dotenv
 import smtplib, os
 from email.mime.text import MIMEText
-
+from datetime import date
 load_dotenv()
  
 RECEIVER_EMAIL = os.getenv('RECEIVER_EMAIL')  
 SENDER_EMAIL = os.getenv('SENDER_EMAIL')  
 EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')  
 
-def send_email(bot_message):
+def send_email(bot_message, asset_name):
+    current_date = date.today()
     """Send an email alert."""
-    subject = "PRICE ALERT\n"
+    subject = f"INVESTMENT REPORT: {asset_name}, DATE: {current_date}\n"
     body = f"{bot_message}"
     msg = MIMEText(body, "plain", "utf-8")
     msg["Subject"] = subject

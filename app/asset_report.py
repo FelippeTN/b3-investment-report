@@ -28,11 +28,11 @@ def web_scrapping(asset_name, links):
             print(asset_name[x], link)
             result = web_search(link)
             bot_response = groq_call(asset_name[x], result)
-            send_email(bot_response)
+            send_email(bot_response, asset_name)
             x=+1
         
-    except:
-        print('Deu ruim nesse CARAAAAI!')
+    except Exception as e:
+        print(e)
         
 
             

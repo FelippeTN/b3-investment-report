@@ -10,7 +10,7 @@ def groq_call(asset_name, message):
         messages=[
             {
                 "role": "system",
-                "content": "Você é um bot profissional e analises sobre ações do Brasil com base nas informações fornecidas. Sua analise é bem clara e em apenas 1 parágrafo, utilizando as estratégias do Barsi, maior investidor PF Brasileiro."
+                "content": "Você é um bot profissional de analises sobre ações do Brasil com base nas informações fornecidas. Sua analise é bem clara e em apenas 1 parágrafo, utilizando as estratégias do Barsi, maior investidor PF Brasileiro."
             },
             {
                 "role": "user",
